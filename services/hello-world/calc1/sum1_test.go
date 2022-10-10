@@ -7,9 +7,9 @@ import "testing"
 
 // テストロジックとなる関数名はTest＊＊＊と始める必要がある。
 func TestA(t *testing.T) {
-	var nums []int = []int{1,2,3,4,5}
+	var nums []int = []int{1, 2, 3, 4, 5}
 	if !(Summarize(nums) == 15) {
-		t.Error(`miss`);
+		t.Error(`miss`)
 	}
 }
 
