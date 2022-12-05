@@ -38,3 +38,23 @@ func TestBubbleSort(t *testing.T) {
 		t.Errorf("error")
 	}
 }
+
+func TestSelectionSort(t *testing.T) {
+	nums := []int{1, 2, 4, 3, 7, 6, 5, 8, 9}
+
+	expect := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+	if r := SelectionSort(nums); !reflect.DeepEqual(r, expect) {
+		t.Errorf("error")
+	}
+}
+
+func TestInsertionSort(t *testing.T) {
+	nums := []int{1, 2, 4, 3, 7, 6, 5, 8, 9}
+
+	expect := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+	if r := InsertionSort(nums); !reflect.DeepEqual(r, expect) {
+		t.Errorf("error")
+	}
+}

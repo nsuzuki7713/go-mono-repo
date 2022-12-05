@@ -47,3 +47,39 @@ func BubbleSort(nums []int) []int {
 
 	return nums
 }
+
+// 選択ソート
+// 配列から最小値を探し、配列の先頭要素と入れ替えていくことで並べ替える。
+func SelectionSort(nums []int) []int {
+	lenNums := len(nums)
+
+	for i := 0; i < lenNums; i++ {
+		minIdx := i
+		for j := i + 1; j < lenNums; j++ {
+			if nums[minIdx] > nums[j] {
+				minIdx = j
+			}
+		}
+
+		nums[i], nums[minIdx] = nums[minIdx], nums[i]
+	}
+
+	return nums
+}
+
+// 挿入ソート
+func InsertionSort(nums []int) []int {
+	lenNums := len(nums)
+
+	for i := 1; i < lenNums; i++ {
+		temp := nums[i]
+		j := i - 1
+		for j >= 0 && nums[j] > temp {
+			nums[j+1] = nums[j]
+			j -= 1
+		}
+		nums[j+1] = temp
+	}
+
+	return nums
+}
